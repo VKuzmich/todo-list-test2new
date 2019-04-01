@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <title>TodoList</title>
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+        <script src="https://raw.githack.com/SortableJS/Sortable/master/Sortable.js"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+        <link href="style1.css" rel="stylesheet">
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+
+
+
+</head>
+<body>
+
+
+
+
+<div id="Title" class="container justify-content-center w-50 p-3 h-25">
+    <h2 style="text-align: center;">SIMPLE TODO LISTS</h2>
+    <h4 style="text-align: center;">FROM ....</h4>
+</div>
+
+<div id="root">
+
+
+    <div class="app" data-todo="1">
+        <div class="to-do col-md-8 offset-md-2 task-todo-table">
+
+
+            <div class="row task-head task-row">
+                <div class="to-do__header col-xsm task-head-icon">
+                    <button class="btn btn-calendar">
+                        <i class="far fa-calendar-alt"></i></button>
+                    <input class="date-range" type="text" name="daterange" value="01/01/2019 - 01/15/2019" />
+
+                    <script>
+
+                        $(function() {
+
+                            $('input[name="daterange"]').daterangepicker({
+                                opens: 'left'
+                            }, function(start, end, label) {
+                                console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
+                            });
+                        });
+                    </script>
+
+                </div>
+
+                <div class="col task-head-text text-white form-inline">
+                    <p class="task-head-written m-0">Complete the test task</p>
+                </div>
+
+                <div class="col-xsm task-head-edit form-inline">
+                    <div class="col-xsm edit-trash form-inline">
+
+                        <button class="btn btn-pencil btn-sm" "="">
+                        <i class="fas fa-pencil-alt"></i>
+                        </button>
+
+                        <span>|</span>
+
+                        <button class="btn fas fa-trash-alt trash btn-sm">
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <div class="row button_add">
+
+                <div class="col-xsm form-inline pl-0 pr-0">
+                    <button class="btn button-plus-task">
+                        <i class="fas fa-plus fa-lg"></i></button>
+                </div>
+
+                <div class="col input-group m-1 p-1">
+
+                    <div class="input-group">
+
+                        <input type="text" class="form-control input-task to-do__action-input" id="to_do_text_1" aria-describedby="button-addon2" placeholder="Start typing here to create the task...">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary text-white add-task btn-add" onclick="addToDO()" id="button-addon2" type="button" style="background-color: green;"> Add Task</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="to-do__content-items" id="to_do_items_1">
+
+                        <div class="row to-do__item item-lists">
+                            <div class="col-xsm form-inline form-check d-flex align-items-center p-3">
+                                <input type="checkbox" class="form-check-input" value="" id="defaultCheck1">
+                                <label class="form-check-label" for="defaultCheck1">
+                                </label></div>
+                            <div class="col form-inline todo-list-text ml-1">
+                                <p class="mb-0">x s s </p>
+                            </div>
+                            <div class="col-xsm sort-edit-trash form-inline">
+
+                                <select class="custom-select custom-select-sm">
+                                    <option selected></option>
+                                    <option value="1">High</option>
+                                    <option value="2">Middle</option>
+                                    <option value="3">Low</option>
+                                </select>
+
+                                <span>|</span>
+
+                                <button class="btn btn-pencil btn-sm">
+                                    <i class="fas fa-pencil-alt"></i></button>
+
+                                <span>|</span>
+
+                                <button class="btn fas fa-trash-alt btn-trash btn-sm">
+                                </button>
+
+                            </div>
+                        </div>
+                        <div class="row to-do__item item-lists">
+                            <div class="col-xsm form-inline form-check d-flex align-items-center p-3">
+                                <input type="checkbox" class="form-check-input" value="" id="defaultCheck1">
+                                <label class="form-check-label" for="defaultCheck1">
+                                </label></div>
+                            <div class="col form-inline todo-list-text ml-1">
+                                <p class="mb-0">x s ss s sd  </p>
+                            </div>
+                            <div class="col-xsm sort-edit-trash form-inline">
+
+                                <select class="custom-select custom-select-sm">
+                                    <option selected></option>
+                                    <option value="1">High</option>
+                                    <option value="2">Middle</option>
+                                    <option value="3">Low</option>
+                                </select>
+
+                                <span>|</span>
+
+                                <button class="btn btn-pencil btn-sm">
+                                    <i class="fas fa-pencil-alt"></i></button>
+
+                                <span>|</span>
+
+                                <button class="btn fas fa-trash-alt btn-trash btn-sm">
+                                </button>
+
+                            </div>
+                        </div></div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+
+<div class="row">
+    <div class="col-12 d-flex justify-content-center mt-5">
+        <button class="btn-primary" onclick="createTodoList(this)" data-list="3">ADD TODO LIST</button>
+
+    </div>
+
+</div>
+
+
+<div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true"></span>
+                    <h4 class="modal-title">Write task</h4>
+                </button>
+            </div>
+            <div class="modal-body">
+                <input class="form-control input-task-edit" type="text" placeholder="Enter">
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-default" type="button" data-dismiss="modal">Close</button>
+                <button class="btn btn-primary save-changes" data-dismiss="modal">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+<!--datetimepicker -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+
+
+<script src="main3.js"></script>
+
+
+
+</body>
+</html>
