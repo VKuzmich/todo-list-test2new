@@ -1,0 +1,133 @@
+
+
+html {
+    height: 100%;
+}
+body {
+    height: 100%;
+    margin: 0;
+    background-image: linear-gradient(rgb(202, 207, 210), rgb(214, 137, 16));
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+#Todo_list {
+	margin: 0;
+	padding: 0;
+}
+
+.todoItem {
+    margin: 0px;
+    color: white;
+    
+}
+
+#todo_item {
+	line-height: 3em;
+}
+
+.task-head {
+    background-color: rgb(46, 134, 193);
+}
+
+.edit-trash{
+  visibility:hidden;
+}
+
+:hover>.edit-trash{
+  visibility:visible;}
+
+.to-do__item>.sort-edit-trash{
+  visibility:hidden;
+}
+
+.to-do__item:hover>.sort-edit-trash{
+  visibility:visible;}
+
+
+
+.button_add {
+	background-color: rgb(199, 194, 194);
+}
+
+.item-lists {
+	background-color: beige;
+    border-bottom: #adb5bd;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+   
+}
+
+.item-lists:last-child {
+	 border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+
+
+.task {
+	margin-bottom: 0px;
+}
+
+.form-check {
+	border-right-style: solid;
+    border-color: rgb(223, 139, 139);
+    border-right-width: 1px;
+}
+
+.todo-list-text {
+	border-left-style: solid;
+    border-color: rgb(223, 139, 139);
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-right-style: solid;
+    border-right-color: #adb5bd;
+}
+
+.btn-primary{
+  background-color: rgb(46, 134, 193);
+  padding-top: 0px;
+  padding-bottom: 6px;
+  display: table;
+  margin: 20px auto;
+}
+
+
+
+
+
+        .to-do {
+
+        }
+
+        .to-do__header {
+            padding: 15px;
+            text-align: center;
+            color: white;
+            border-radius: 3px;
+        }
+
+        .to-do__action-input {
+            border-radius: 3px;
+        }
+        .to-do__item{
+            border-bottom: 1px solid darkgray;
+        }
+
+
+        .app{
+            margin-top: 40px ;
+        }
+
+        .btn-add{
+        rgb(63, 144, 63);
+        }
+        .button_add {
+            background-color: rgb(199, 194, 194);
+        }
+
+        /*styles for index_new*/
+
+.date-range {
+    width: 187px;
+}
