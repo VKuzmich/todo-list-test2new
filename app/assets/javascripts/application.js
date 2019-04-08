@@ -140,9 +140,7 @@ function createTodoList() {
     addListenerToEditTask();
 
 
-
 }
-
 
 
 addListenerToEditTask();

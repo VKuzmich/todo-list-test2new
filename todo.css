@@ -13,9 +13,9 @@ body, html{
     align-items: center;
 }
 .todo{
-    width: 80%;
+    width: 100%;
     height: auto;
-    background: whitesmoke;
+    
     margin-bottom: 32px;
 
 }
@@ -34,7 +34,7 @@ body, html{
     justify-content: space-between;
 }
 .todo__list_input{
-    width: 25%;
+    
     padding: 12px;
     font-size: 16px;
 }
@@ -64,10 +64,12 @@ body, html{
 
 }
 .todo__priority{
+    
     padding: 16px;
     width: 10%;
 }
 .todo__status{
+
     padding: 16px;
     width: 20%;
 }
